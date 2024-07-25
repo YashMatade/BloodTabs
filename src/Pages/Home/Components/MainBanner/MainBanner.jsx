@@ -8,21 +8,21 @@ const MainBanner = () => {
       <div className="container-fluid mb-5">
         <div className="row ms-2 me-2">
           <div className="col-lg-8 my-auto">
-            <div className="text-danger" style={{ fontWeight: "700" }}>
+            <div className="text-danger" style={{ fontWeight: "700", fontSize:"18px" }}>
               Donate Blood Save Life!
             </div>
             <div
               className="mt-2 mb-2"
               style={{
                 fontWeight: "600",
-                fontSize: "30px",
-                lineHeight: "30px",
+                fontSize: "60px",
+                lineHeight: "60px",
               }}
             >
               Sometimes Money Cannot Save Life But{" "}
               <span className="text-danger">Donated Blood</span> Can
             </div>
-            <div className="text-secondary mb-4" style={{ fontSize: "14px" }}>
+            <div className="text-secondary mb-4" style={{ fontSize: "18px" }}>
               Sometimes Money Cannot Save Life But Donated Blood Can Sometimes
               Money Cannot Save Life But Donated Blood Can Sometimes Money
             </div>
