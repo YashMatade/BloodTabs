@@ -1,0 +1,161 @@
+.stepper-container {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 2px solid #D82320;
+  }
+  
+  .stepper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+  }
+  
+  .step-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border:  1px solid #D9D9D9;
+    color: black;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step-circle.active {
+    background-color: #D82320;
+    color: white;
+  }
+  
+  .step-label {
+    margin-top: 5px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+  
+  .step-connector {
+    width: 100%;
+    height: 3px;
+    background-color: lightgray;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    z-index: 0;
+  }
+  
+  hr {
+    margin: 20px 0;
+  }
+  
+  .step-content {
+    margin-bottom: 20px;
+  }
+  
+  
+
+  .next_step svg{
+    margin: 3px;
+  }
+
+  .next_step{
+    background: transparent;
+    outline: none;
+height: 45px;
+max-width: 100%;    
+color: #252525;
+font-weight:500 ;
+    border-radius: 5px;
+    border: 1px solid #E95E10;
+  }
+
+
+  .stepper-container_text h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+  }
+
+
+  .stepper-container_text p{
+    text-align: center;
+    color: #000000;
+  }
+
+
+
+
+  .next_step:hover{
+    color: white;
+    background-color: #E95E10;
+  }
+
+
+ .redirect_message p{
+    text-align: left !important;
+ }
+
+ .redirect_message{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: #252525;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 10px;
+ }
+  
+ .redirect_message svg{
+    margin-top: -1rem;
+ }
+  .success-message {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  .success-message h4{
+    color: #E95E10;
+  }
+
+
+  .step_success_des{
+    text-align: center;
+    width: 500px;
+  }
+  .step_success_des p{
+line-height: 28px;
+font-weight: 500;
+color: #252525;
+  }
+  .success-message p{
+    color: #252525;
+  }
+
+
+  .step_completed{
+    font-weight: 500;
+  }
+  
+
+  .success-icon {
+    color: #4caf50;
+    font-size: 5rem;
+  }
+  
+ 
