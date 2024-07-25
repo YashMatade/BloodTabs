@@ -1,0 +1,56 @@
+.main_logo{
+display: flex;
+align-items: center;
+gap: 10px;
+cursor: pointer;
+}
+
+
+.topbar{
+    display: flex;  
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+
+}
+
+
+.header_links{
+    display: flex;
+    gap: 2.5rem;
+
+}
+
+.link_line{
+    border: 2px solid #D82320;
+    width:100% ;
+    margin-top: -1rem;
+}
+
+
+.link_wrapper{
+cursor: pointer;
+
+}
+
+
+.header_links p{
+    cursor: pointer;
+}
+
+.main_logo p{
+    color: #000000;
+    font-weight: 700;
+}
+
+
+.main_logo span{
+    font-weight: 400;
+}
+
+.blood_bg{
+    background: #D82320;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}

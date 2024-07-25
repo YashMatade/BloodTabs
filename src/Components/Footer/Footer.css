@@ -1,0 +1,114 @@
+.footer_main{
+    background: #101010;
+        padding-bottom: 1rem;
+}
+
+.top_footer{
+    display: flex;
+    justify-content: space-between;
+    padding:2rem;
+    margin-bottom: -2rem;
+    color: white;
+}
+
+.footer_main hr{
+    background: #979797;
+}
+
+.footer_cta_donate{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.footer_cta_donate button{
+    background: #E95E10;
+    border: none;
+    height: 50px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+
+.footer_link p{
+    cursor: pointer;
+    color: gray;
+}
+
+
+.footer_link p:hover{
+    color: white;
+}
+
+.footerlinks h3{
+    color: #FFD2DD;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.footerlinks li{
+text-align: left;
+}
+
+.footerlinks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+
+.footer_newsLetter h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer_newsLetter input{
+    background: transparent;
+    outline: none;
+    color: white;
+    border: none;
+    height: 40px;
+    border-bottom: 1px solid #979797 !important;
+}
+
+
+.footer_newsLetter{
+ 
+    padding: 2rem;
+}
+
+.footer_newsLetter button{
+    color: #E95E10;
+    border-radius: 10px;
+    height: 40px;
+    background-color: white;
+}
+
+
+.bottom_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer_terms{
+  transform: translateX(30px);
+  display: flex;
+  gap: 2rem;
+  color: white;
+}
+
+.footer_social_icons svg{
+    color: white;
+    cursor: pointer;
+}
+
+.footer_social_icons{
+    display: flex;
+    gap: 2rem;
+}
