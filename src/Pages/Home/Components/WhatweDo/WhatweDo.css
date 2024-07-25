@@ -1,0 +1,156 @@
+.whatwedo_main_content h3{
+    color: #D82320;
+    font-size: 1.5rem;
+}
+
+
+.what_we-do{
+    display: grid;
+
+    grid-template-columns: 400px 1fr;
+}
+
+
+.what_we_do_img_box {
+    position: relative;
+    display: inline-block;
+  }
+
+  .overlay_box_content{
+   background: #f1f1f1;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   height: 100%;
+
+  }
+
+
+
+  .overlay_box_content h3{
+    color: #252525;
+    font-size: 1.5rem;
+  }
+
+  .overlay_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -20%);
+    background-color: white;
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+    width: 150px;
+
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .actual_image_whatwedo {
+    position: relative;
+  }
+
+
+
+.img_whatwedo_bg svg{
+    font-size: 8rem;   color: rgba(216, 35, 32, 0.3);
+        transform: translateX(-40px);
+
+}
+
+.img_whatwedo_bg {
+    position: relative;
+    border: 1px solid #D82320;
+    width: 200px;
+    height: 370px;
+    display: flex;
+    margin: 1rem;
+}
+
+
+.actual_image_whatwedo{
+    flex-direction: row;
+    display: flex;
+}
+
+.actual_image_whatwedo img {
+    width:300px;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+    transform: translateX(10px);
+    margin-top: -3rem;
+    position: relative;
+    z-index: 1; 
+}
+
+
+
+.whatwedo_main_content h4{
+color: #000000;
+font-weight: 500;
+font-size: 2rem;
+}
+
+.whatwedo_main_content:hover{
+    color: white;
+}
+
+.whatwedo_main_content p{
+    color: #343231;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.whatwedo_main_content{
+    padding: 1rem;
+}
+.content-item{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.whatwedo_main_content button{
+    border-radius: 10px;
+    color: #252525;
+    height: 45px;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin: 1rem;
+    background: transparent;
+    border: 1px solid #E95E10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+}
+
+
+
+.whatwedo_main_content button:hover{
+    background: #E95E10;
+    color: white;
+}
+
+
+.content-item:hover{
+    background: linear-gradient(
+        135deg, 
+        #D82320 0%, 
+        #BE201D 40%, 
+        #8E0705 100%
+    );
+    border-radius: 10px;
+}
+
+.content-item:hover h4,
+.content-item:hover p {
+    color: white;
+}

@@ -1,0 +1,21 @@
+.thumbnail-container {
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+  
+  .thumbnail-img {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .thumbnail-container.selected {
+    border: 4px solid red;
+    background-color: red;
+    color: white;
+  }
+  
+  .thumbnail-text {
+    padding-top: 8px;
+    text-align: center;
+  }
+  

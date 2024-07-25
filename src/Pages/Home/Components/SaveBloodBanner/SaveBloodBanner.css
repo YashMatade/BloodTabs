@@ -1,0 +1,52 @@
+.save_blood_banner{
+    background: #D82320;
+    border-radius: 10px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    align-items: center;
+    height: 300px;
+}
+
+
+.save_blood_banner_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save_blood_banner img{
+    max-width: 70%;
+}
+
+
+.save_blood_banner button{
+    background: white;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    height: 40px;
+width: 120px;
+border-radius: 5px;
+color: #000000;
+    border: none;
+}
+
+
+.save_blood_banner_contents p{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400
+}
+
+
+.save_blood_banner_contents h3{
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    margin-bottom: 1rem;
+    white-space: wrap;
+}
