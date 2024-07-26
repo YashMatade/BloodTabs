@@ -10,6 +10,7 @@ const OurTeam =lazy(()=>import('./Components/Team//OurTeam'))
 const VideoTestimonials =lazy(()=>import('./Components/VideoTestimonials/VideoTestimonials'))
 const DonationProcess=lazy(()=>import('./Components/DonationProcess/DonationProcess'))
 const MainBanner=lazy(()=>import('./Components/MainBanner/MainBanner'))
+const ReceiverForm =lazy(()=>import('./Components/ReceiverForm/ReceiverForm'))
 
 const Home = () => {
   return (
@@ -19,6 +20,10 @@ const Home = () => {
       <WhatweDo />
       <WhyDonate />
       <DonationProcess />
+      <div className="container">
+      <ReceiverForm/>
+      </div>
+     
       <SaveBlood />
       <VideoTestimonials />
       <Testimonials />
