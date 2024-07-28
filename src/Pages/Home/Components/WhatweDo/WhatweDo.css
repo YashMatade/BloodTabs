@@ -154,3 +154,31 @@ font-size: 2rem;
 .content-item:hover p {
     color: white;
 }
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+    .what_we-do{
+       display: flex;
+       text-align: center;
+       flex-direction: column;
+    }
+
+
+   
+    .img_whatwedo_bg svg{
+        font-size: 7rem;   
+    
+    }
+    
+
+    .overlay_box {
+
+        left: 20%;
+       
+      }
+}

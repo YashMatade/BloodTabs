@@ -59,3 +59,64 @@ transform: translateX(40px)
     font-size: 0.9rem;
     text-align: justify;
 }
+
+
+
+@media only screen and (max-width: 768px){
+
+    .main_whydonatecontent{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+       
+    }
+
+    .second_whydonate{
+     
+     margin-top: -3rem;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     margin-bottom: -1rem;
+     text-align: left;
+    }
+
+
+    .whyDonateReason{
+      border: none;
+        text-align: center;
+        padding: 0;
+        color: #D82320;
+        cursor: pointer;
+        width: 100%;
+        margin: 0px;
+    transform: translateX(0px)
+        
+    }
+
+
+    .m_btn button{
+
+        background: transparent;
+        outline: none;
+        background: transparent;
+        border: 1px solid #E95E10;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease;
+                height: 40px;
+            width: 120px;
+            border-radius: 5px;
+    }
+
+
+ 
+
+    .m_btn button:hover{
+        background: #E95E10;
+        color: white;
+    }
+
+
+    .d_btn{
+        display: none;
+    }
+}

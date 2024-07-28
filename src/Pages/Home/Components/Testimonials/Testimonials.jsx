@@ -46,7 +46,7 @@ const Testimonials = () => {
         </div>
         <div className="col-lg-8" >
           <div className="main_slide_container" style={{ background: "#D82320" }}>
-            <div className="testimonial-slides-wrapper" style={{ transform: `translateX(-${currentIndex * 600}px)`,width:"100px" }}>
+            <div className="testimonial-slides-wrapper" style={{ transform: `translateX(-${currentIndex * 200}px)`,width:"100px" }}>
               {Slides.map((testimonial, index) => (
                 <div className="testimonial-slide" key={index}>
                   <div className="top_info">

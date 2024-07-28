@@ -26,7 +26,10 @@ const WhyDonate = () => {
     <h3>{why.title}</h3>
     <h4>{why.titletag}</h4>
     <p>{why.description}</p>
+    <div className="d_btn">
     <button>Read More</button>
+
+    </div>
 </div>
 
 <div className="second_whydonate">
@@ -41,6 +44,10 @@ const WhyDonate = () => {
         </div>
     ))}
 </div>
+<div className="m_btn">
+    <button>Read More</button>
+
+    </div>
         </div>
     ))}
 </div>

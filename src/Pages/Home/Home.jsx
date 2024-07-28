@@ -14,13 +14,13 @@ const ReceiverForm =lazy(()=>import('./Components/ReceiverForm/ReceiverForm'))
 
 const Home = () => {
   return (
-    <div>
+    <div className=" main_home">
       <Header />
       <MainBanner />
       <WhatweDo />
       <WhyDonate />
       <DonationProcess />
-      <div className="container">
+      <div className="">
       <ReceiverForm/>
       </div>
      

@@ -100,3 +100,29 @@ gap: 1rem;
 .main_controls svg:hover{
     color: #D82320;
 }
+
+
+@media only screen and (max-width: 768px){
+
+    .testimonial-slide{
+    
+        width: 300px !important;
+       height:auto; 
+       border-radius: 15px;
+       background: white;
+       flex-shrink: 0;
+       transform: translateX(-30px);
+       box-sizing: border-box;
+       transition: transform 0.5s ease-in-out;
+       
+       }
+
+       .main_testimonails_content{
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}

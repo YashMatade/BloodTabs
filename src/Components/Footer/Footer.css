@@ -112,3 +112,36 @@ text-align: left;
     display: flex;
     gap: 2rem;
 }
+
+
+@media only screen and (max-width: 768px){
+    .top_footer{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer_cta_donate{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .footerlinks{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:1rem;
+    }
+
+
+    .bottom_footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .footer_social_icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

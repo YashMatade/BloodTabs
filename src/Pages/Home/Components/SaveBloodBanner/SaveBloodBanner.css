@@ -50,3 +50,33 @@ color: #000000;
     margin-bottom: 1rem;
     white-space: wrap;
 }
+
+
+
+@media only screen and (max-width: 768px){
+
+    .save_blood_banner{
+        background: #D82320;
+        border-radius: 10px;
+        width: 100%;
+        
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        padding: 1rem;
+        /* align-items: center; */
+        height: auto;
+    }
+
+
+    .save_blood_banner img{
+        max-width: 100%;
+    }
+
+
+
+    .save_blood_banner_image{
+        padding: 1rem;
+    }
+    
+}

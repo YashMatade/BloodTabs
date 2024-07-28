@@ -4,11 +4,16 @@ import { FaArrowRight, FaCheckCircle, FaSearch } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 
 import { FiUpload } from 'react-icons/fi';
+import { IoIosSearch } from "react-icons/io";
+import { MdMyLocation } from "react-icons/md";
+
 
 
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 import D from '/d.png';
+import Region from '/region.png';
+
 
 const steps = [
   'Location',
@@ -27,6 +32,82 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
   const [department, setDepartment] = useState('');
   const [roomFloor, setRoomFloor] = useState('');
   const [landmark, setLandmark] = useState('');
+  const [state, setState] = useState('');
+  const [district, setDistrict] = useState('');
+  const [city, setCity] = useState('');
+
+
+  const regions = [
+    {
+      regionname: "Koramangala",
+      PinCode: "560034",
+      regionImg: Region,
+    },
+    {
+      regionname: "Indiranagar",
+      PinCode: "560038",
+      regionImg: Region,
+    },
+    {
+      regionname: "Whitefield",
+      PinCode: "560066",
+      regionImg: Region,
+    },
+    {
+      regionname: "Jayanagar",
+      PinCode: "560041",
+      regionImg: Region,
+    },
+    {
+      regionname: "Marathahalli",
+      PinCode: "560037",
+      regionImg: Region,
+    },
+    {
+      regionname: "HSR Layout",
+      PinCode: "560102",
+      regionImg: Region,
+    },
+    {
+      regionname: "Electronic City",
+      PinCode: "560100",
+      regionImg: Region,
+    },
+    {
+      regionname: "Bellandur",
+      PinCode: "560103",
+      regionImg: Region,
+    },
+    {
+      regionname: "Banaswadi",
+      PinCode: "560043",
+      regionImg: Region,
+    },
+    {
+      regionname: "Malleshwaram",
+      PinCode: "560003",
+      regionImg: Region,
+    },
+    {
+      regionname: "Rajajinagar",
+      PinCode: "560010",
+      regionImg: Region,
+    },
+    {
+      regionname: "Basavanagudi",
+      PinCode: "560004",
+      regionImg: Region,
+    },
+  ];
+  
+
+
+  const handleSaveDetails = () => {
+    // Logic to save details
+    console.log('State:', state);
+    console.log('District:', district);
+    console.log('City:', city);
+  };
 
   const handleStatusChange = (e) => {
     setStatus(e.target.value);
@@ -47,7 +128,53 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
 
   switch (step) {
     case 0:
-      return <div>Location Related Content</div>;
+      return <div>
+        <div className="location_based_form">
+        <div className="location_searchbar">
+      <div className="searchbar-wrapper">
+        <IoIosSearch className="search-icon" />
+        <input type="text" placeholder="Search for your location" />
+      </div>
+      <p className='detectmyloc'> <MdMyLocation/> Detect my location</p>
+    </div>
+          <div className="state_district_city_dropdowns">
+          <select value={state} onChange={(e) => setState(e.target.value)}>
+        <option value="">State</option>
+        <option value="state1">State 1</option>
+        <option value="state2">State 2</option>
+        <option value="state3">State 3</option>
+      </select>
+      <select value={district} onChange={(e) => setDistrict(e.target.value)}>
+        <option value="">District</option>
+        <option value="district1">District 1</option>
+        <option value="district2">District 2</option>
+        <option value="district3">District 3</option>
+      </select>
+      <select value={city} onChange={(e) => setCity(e.target.value)}>
+        <option value="">City</option>
+        <option value="city1">City 1</option>
+        <option value="city2">City 2</option>
+        <option value="city3">City 3</option>
+      </select>
+      <button onClick={handleSaveDetails}>Save Details</button>
+          </div>
+
+          <div className="regions_array">
+            {regions.map((region,index)=>(
+              < div className='region_box'>
+               <div className="region_item" key={index}>
+                <img src={region.regionImg} alt={region.regionname} />
+               
+              </div>
+               <h6>{region.regionname}</h6>
+               <p>{region.PinCode}</p>
+              </div>
+             
+              
+            ))}
+          </div>
+        </div>
+      </div>;
     case 1:
       return <div>
         <div className="row">
@@ -84,7 +211,7 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
                 <label htmlFor="RelationWithPatient">Relation With Patient</label>
                 <input type="text" name="" id="" placeholder='Relation With Patient'/>
               </div>
-              <div className="basic_text_inputs">
+              <div className="basic_text_inputs border">
               <div className="basic_text_input_name">
                 <label htmlFor="FullName">Patient Full Name</label>
                 <input type="text" name="" id="" placeholder='Patient Full Name'/>
@@ -152,13 +279,13 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
 
          <div className="personal_form-group">
          <label htmlFor="fullName">Full Name</label>
-         <input type="text" id="fullName"  placeholder="Enter your full name" />
+         <input type="text" id="fullName"  placeholder="Full name" />
        </div>
 
        {/* Email */}
        <div className="personal_form-group">
          <label htmlFor="email">Email</label>
-         <input type="email" id="email" placeholder="Enter your email" />
+         <input type="email" id="email" placeholder="Email" />
        </div>
 
       
@@ -168,17 +295,17 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
        {/* Aadhar Number */}
        <div className="personal_form-group">
          <label htmlFor="aadhar">Aadhar Card Number</label>
-         <input type="text" id="aadhar" placeholder="Enter your Aadhar number" />
+         <input type="text" id="aadhar" placeholder="Aadhar Number" />
        </div>
 
        {/* Whatsapp Number */}
        <div className="personal_form-group">
          <label htmlFor="whatsapp">Whatsapp Number</label>
-<div className="whatsapp_input border" style={{border:"1px solid #000000"}}>
+<div className="whatsapp_input" style={{border:"1px solid #000000"}}>
 <input
            type="text"
            id="whatsapp"
-           placeholder="Enter your Whatsapp number"
+           placeholder="Whatsapp No"
            onChange={handleWhatsappChange}
          />
 <div className="verify_number">
@@ -281,7 +408,7 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
         <input
           type="text"
           id="department"
-          placeholder='Enter Department'
+          placeholder='Department'
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
         />
@@ -292,7 +419,7 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
         <input
           type="text"
           id="roomFloor"
-          placeholder='Enter Your Room No. / Floor No.'
+          placeholder='Room No/Floor No'
           value={roomFloor}
           onChange={(e) => setRoomFloor(e.target.value)}
         />
@@ -306,7 +433,7 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
         <input
           type="text"
           id="landmark"
-          placeholder='Enter Nearby Landmark'
+          placeholder='Nearby Landmark'
           value={landmark}
           onChange={(e) => setLandmark(e.target.value)}
         />
@@ -357,7 +484,7 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
               <div className="blood_inputs">
   <div className="blood_input">
     <label htmlFor="bloodType">Patient Blood Type</label>
-    <input type="text" id="bloodType" name="bloodType" placeholder="Enter Blood Type" />
+    <input type="text" id="bloodType" name="bloodType" placeholder="Blood Type" />
   </div>
   <div className="blood_input">
     <label htmlFor="requiredDate">When Required</label>
@@ -392,11 +519,11 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
                 <div className="upload_inputs">
                   <div className="input_upload">
                     <label htmlFor="">Patient Adhaar Card Number:</label>
-                    <input type="text" name="" id="" placeholder="Enter Patient Adhaar Card Number" />
+                    <input type="text" name="" id="" placeholder="Patient Adhaar Card Number" />
                   </div>
                   <div className="input_upload">
                     <label htmlFor="">Patient Adhaar Card Number:</label>
-                    <input type="text" name="" id="" placeholder="Enter Patient Adhaar Card Number" />
+                    <input type="text" name="" id="" placeholder="Patient Adhaar Card Number" />
                   </div>
                 </div>
                 <div className="doc_uploads">
