@@ -568,7 +568,7 @@ const ReceiverForm = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container">
       <div className="stepper-container_text">
         <h3>Receiver’s Form</h3>
         <p>Reassure potential donors with a clear explanation of the process</p>
