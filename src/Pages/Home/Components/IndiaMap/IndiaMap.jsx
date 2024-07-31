@@ -1,61 +1,147 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import blooddonate from "../../../../assets/blooddonate.png";
 import { BiMap } from "react-icons/bi";
+import DatamapsIndia from "react-datamaps-india";
+import "leaflet/dist/leaflet.css";
 
 const IndiaMap = () => {
-  const getRandomDonors = () => Math.floor(Math.random() * 1400) + 1;
+  const [selectedState, setSelectedState] = useState(null);
+  const [hoveredState, setHoveredState] = useState(null);
 
-  // Example state data with coordinates
+  const MapChart = ({ regionData, selectedState, hoveredState }) => {
+    return (
+      <div style={{ position: "relative" }}>
+        <DatamapsIndia
+          style={{ position: "absolute", width: "100%", height: "80vh" }}
+          regionData={regionData}
+          hoverComponent={({ value }) => (
+            <div className="bg-dark text-white">
+              <div>
+                <b>
+                  <BiMap
+                    className="text-danger"
+                    fontWeight={700}
+                    fontSize={"30px"}
+                  />
+                  {value.value} Donors
+                </b>
+              </div>
+              <div>{value.name}</div>
+            </div>
+          )}
+          mapLayout={{
+            title: "",
+            legendTitle: "",
+            startColor: "white",
+            endColor: "white",
+            hoverTitle: "Count",
+            noDataColor: "white",
+            borderColor: "red",
+            hoverColor: hoveredState ? "lightblue" : "red",
+            hoverBorderColor: hoveredState ? "blue" : "red",
+            height: 10,
+            weight: 30,
+          }}
+          onClick={(state) => setSelectedState(state)}
+          selectedRegion={selectedState}
+        />
+      </div>
+    );
+  };
+
   const states = [
-    { name: "Assam", lat: 26.2006, lng: 92.9376, donors: 400 },
-    { name: "Bihar", lat: 25.0961, lng: 85.3131, donors: 600 },
-    { name: "Chhattisgarh", lat: 21.2787, lng: 81.8661, donors: 700 },
-    { name: "Goa", lat: 15.2993, lng: 74.124, donors: 500 },
-    { name: "Gujarat", lat: 22.2587, lng: 71.1924, donors: 1400 },
-    { name: "Haryana", lat: 29.0588, lng: 76.0856, donors: 566 },
-    { name: "Jharkhand", lat: 23.6102, lng: 85.2799, donors: 400 },
-    { name: "Karnataka", lat: 15.3173, lng: 75.7139, donors: 600 },
-    { name: "Kerala", lat: 10.8505, lng: 76.2711, donors: 700 },
-    { name: "Maharashtra", lat: 19.7515, lng: 75.7139, donors: 500 },
-    { name: "Manipur", lat: 24.6637, lng: 93.9063, donors: 1400 },
-    { name: "Meghalaya", lat: 25.467, lng: 91.3662, donors: 566 },
-    { name: "Mizoram", lat: 23.1645, lng: 92.9376, donors: 400 },
-    { name: "Nagaland", lat: 26.1584, lng: 94.5624, donors: 600 },
-    { name: "Odisha", lat: 20.9517, lng: 85.0985, donors: 700 },
-    { name: "Punjab", lat: 31.1471, lng: 75.3412, donors: 500 },
-    { name: "Rajasthan", lat: 27.0238, lng: 74.2179, donors: 1400 },
-    { name: "Sikkim", lat: 27.533, lng: 88.5122, donors: 566 },
-    { name: "Tamil Nadu", lat: 11.1271, lng: 78.6569, donors: 400 },
-    { name: "Telangana", lat: 18.1124, lng: 79.0193, donors: 600 },
-    { name: "Tripura", lat: 23.9408, lng: 91.9882, donors: 700 },
-    { name: "Uttarakhand", lat: 30.0668, lng: 79.0193, donors: 500 },
-    { name: "Chandigarh", lat: 30.7333, lng: 76.7794, donors: 1400 },
-    { name: "Lakshadweep", lat: 10.5667, lng: 72.6417, donors: 566 },
-    { name: "Delhi", lat: 28.7041, lng: 77.1025, donors: 400 },
-    { name: "Puducherry", lat: 11.9416, lng: 79.8083, donors: 600 },
+    { name: "Assam", donors: 400 },
+    { name: "Bihar", donors: 600 },
+    { name: "Chhattisgarh", donors: 700 },
+    { name: "Goa", donors: 500 },
+    { name: "Gujarat", donors: 1400 },
+    { name: "Haryana", donors: 566 },
+    { name: "Jharkhand", donors: 400 },
+    { name: "Karnataka", donors: 600 },
+    { name: "Kerala", donors: 700 },
+    { name: "Maharashtra", donors: 500 },
+    { name: "Manipur", donors: 1400 },
+    { name: "Meghalaya", donors: 566 },
+    { name: "Mizoram", donors: 400 },
+    { name: "Nagaland", donors: 600 },
+    { name: "Odisha", donors: 700 },
+    { name: "Punjab", donors: 500 },
+    { name: "Rajasthan", donors: 1400 },
+    { name: "Sikkim", donors: 566 },
+    { name: "Tamil Nadu", donors: 400 },
+    { name: "Telangana", donors: 600 },
+    { name: "Tripura", donors: 700 },
+    { name: "Uttarakhand", donors: 500 },
+    { name: "Chandigarh", donors: 1400 },
+    { name: "Lakshadweep", donors: 566 },
+    { name: "Delhi", donors: 400 },
+    { name: "Puducherry", donors: 600 },
   ];
 
-  const [selectedState, setSelectedState] = useState(null);
+  const regionData = {
+    "Andaman & Nicobar Island": { value: 150 },
+    "Andhra Pradesh": { value: 470 },
+    "Arunanchal Pradesh": { value: 248 },
+    Assam: { value: 528 },
+    Bihar: { value: 755 },
+    Chandigarh: { value: 95 },
+    Chhattisgarh: { value: 1700 },
+    Delhi: { value: 1823 },
+    Goa: { value: 508 },
+    Gujarat: { value: 624 },
+    Haryana: { value: 1244 },
+    "Himachal Pradesh": { value: 640 },
+    "Jammu & Kashmir": { value: 566 },
+    Jharkhand: { value: 814 },
+    Karnataka: { value: 2482 },
+    Kerala: { value: 899 },
+    Lakshadweep: { value: 15 },
+    "Madhya Pradesh": { value: 1176 },
+    Maharashtra: { value: 727 },
+    Manipur: { value: 314 },
+    Meghalaya: { value: 273 },
+    Mizoram: { value: 306 },
+    Nagaland: { value: 374 },
+    Odisha: { value: 395 },
+    Puducherry: { value: 245 },
+    Punjab: { value: 786 },
+    Rajasthan: { value: 1819 },
+    Sikkim: { value: 152 },
+    "Tamil Nadu": { value: 2296 },
+    Telangana: { value: 467 },
+    Tripura: { value: 194 },
+    "Uttar Pradesh": { value: 2944 },
+    Uttarakhand: { value: 1439 },
+    "West Bengal": { value: 1321 },
+  };
 
   const handleStateClick = (state) => {
     setSelectedState(state);
   };
 
+  const handleStateHover = (state) => {
+    setHoveredState(state);
+  };
+
+  const handleStateLeave = () => {
+    setHoveredState(null);
+  };
+
   return (
     <div className="row" style={{ display: "flex" }}>
-      <div className="col-lg-6 " style={{ padding: "20px", overflowY: "auto" }}>
+      <div className="col-lg-5 " style={{ padding: "20px", overflowY: "auto" }}>
         <div className="row my-auto mt-5">
           {states.map((state, index) => (
             <div
               className="col-lg-2 mt-1"
               key={index}
               style={{ cursor: "pointer", marginBottom: "10px" }}
-              onClick={() => handleStateClick(state)}
+              onClick={() => handleStateClick(state.name)}
+              onMouseEnter={() => handleStateHover(state.name)}
+              onMouseLeave={handleStateLeave}
             >
               <div
-                className=" p-2"
+                className="p-2"
                 style={{
                   border: "2px solid black",
                   height: "100px",
@@ -73,10 +159,9 @@ const IndiaMap = () => {
                     className="text-center mt-2"
                     style={{ textWrap: "nowrap" }}
                   >
-                    {" "}
                     <b className="text-danger" style={{ fontSize: "12px" }}>
-                      {state.donors} doners
-                    </b>{" "}
+                      {state.donors} donors
+                    </b>
                   </div>
                 </div>
               </div>
@@ -87,44 +172,12 @@ const IndiaMap = () => {
           ))}
         </div>
       </div>
-      <div className="col-lg-6" style={{ height: "100vh", padding: "50px" }}>
-        <MapContainer
-          center={[22.5937, 78.9629]}
-          zoom={5}
-          style={{ height: "100%", width: "100%" }}
-        >
-          <TileLayer
-            attribution="&copy; OpenStreetMap contributors"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-
-          {/* Map markers for states */}
-          {states.map((state, index) => (
-            <Marker
-              key={index}
-              position={[state.lat, state.lng]}
-              eventHandlers={{
-                click: () => handleStateClick(state),
-              }}
-            />
-          ))}
-
-          {/* Popup for selected state */}
-          {selectedState && (
-            <Popup
-              position={[selectedState.lat, selectedState.lng]}
-              onClose={() => setSelectedState(null)}
-            >
-              <div>
-                <BiMap className="text-danger" />
-                <b>{selectedState.name}</b>
-              </div>
-              <div>
-                <b>{selectedState.donors} Doners</b>
-              </div>
-            </Popup>
-          )}
-        </MapContainer>
+      <div className="col-lg-7" style={{ height: "100vh", padding: "0px" }}>
+        <MapChart
+          regionData={regionData}
+          selectedState={selectedState}
+          hoveredState={hoveredState}
+        />
       </div>
     </div>
   );

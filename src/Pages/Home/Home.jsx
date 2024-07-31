@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import "./Home.css";
 import IndiaMap from "./Components/IndiaMap/IndiaMap";
+import IndiaMapSample from "../../Components/IndiaMapSample/IndiaMapSample";
 
 const WhatweDo = lazy(() => import("./Components/WhatweDo/WhatweDo"));
 const Header = lazy(() => import("../../Components/Header/Header"));
@@ -41,6 +42,7 @@ const Home = () => {
         </p>
         <IndiaMap />
       </div>
+
       <div className="">
         <ReceiverForm />
       </div>
