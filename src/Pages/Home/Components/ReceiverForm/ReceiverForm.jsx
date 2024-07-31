@@ -77,27 +77,12 @@ const StepContent = ({ step, selectedBloodType, setSelectedBloodType }) => {
       regionname: "Bellandur",
       PinCode: "560103",
       regionImg: Region,
-    },
-    {
-      regionname: "Banaswadi",
-      PinCode: "560043",
-      regionImg: Region,
-    },
-    {
-      regionname: "Malleshwaram",
-      PinCode: "560003",
-      regionImg: Region,
-    },
-    {
-      regionname: "Rajajinagar",
-      PinCode: "560010",
-      regionImg: Region,
-    },
-    {
-      regionname: "Basavanagudi",
-      PinCode: "560004",
-      regionImg: Region,
-    },
+    }
+    // {
+    //   regionname: "Banaswadi",
+    //   PinCode: "560043",
+    //   regionImg: Region,
+    // }
   ];
   
 

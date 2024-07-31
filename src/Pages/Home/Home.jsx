@@ -20,7 +20,7 @@ const Home = () => {
       <WhatweDo />
       <WhyDonate />
       <DonationProcess />
-      <div className="">
+      <div className="receiver-form">
       <ReceiverForm/>
       </div>
      

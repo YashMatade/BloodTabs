@@ -955,6 +955,7 @@ flex-direction: column;
    }
   
 
+
   .personal_form{
     display: grid;
     grid-template-columns: 1fr 1fr;
