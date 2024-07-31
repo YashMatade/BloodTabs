@@ -590,10 +590,24 @@ const ReceiverForm = () => {
               </div>
             </div>
             <div className="col-lg-2">
-              <button onClick={handleNext} className="next_step">
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next Step'}
+
+              <div className="row">
+                <div className="col">
+                <button onClick={handleNext} className="next_step">
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 <FaArrowRight />
               </button>
+                </div>
+                <div className="col">
+                <button onClick={handleBack} className="next_step">
+                Prev
+                <FaArrowLeft />
+              </button>
+                </div>
+              </div>
+             
+
+           
             </div>
           </div>
           <div className="step-content">
