@@ -17,8 +17,8 @@ const DonationProcess = () => {
           className="col-md-4 d-flex flex-column align-items-center"
           style={{ marginTop: "200px" }}
         >
-          <div className="step-circle mb-3">
-            <span className="step-number">1</span>
+          <div className="step-circle-process mb-3">
+            <span className="step-number-process">1</span>
           </div>
           <div className="step-content-circle">
             <div className="step-content">
@@ -29,12 +29,12 @@ const DonationProcess = () => {
           </div>
         </div>
         <div className="col-md-4 d-flex flex-column align-items-center">
-          <div className="step-circle mb-3">
-            <span className="step-number">2</span>
+          <div className="step-circle-process mb-3">
+            <span className="step-number-process">2</span>
           </div>
           <div className="step-content-circle">
             <div className="step-content">
-                <img src={app_registration} alt="" />
+              <img src={app_registration} alt="" />
               <h4>Mini-physical</h4>
               <p>Checking temperature, blood pressure, and pulse.</p>
             </div>
@@ -44,16 +44,16 @@ const DonationProcess = () => {
           className="col-md-4 d-flex flex-column align-items-center "
           style={{ marginTop: "200px" }}
         >
-          <div className="step-circle mb-3">
-            <span className="step-number">3</span>
+          <div className="step-circle-process mb-3">
+            <span className="step-number-process">3</span>
           </div>
           <div className="step-content-circle">
             <div className="step-content">
-            <img src={volunteer_activism} alt="" />
+              <img src={volunteer_activism} alt="" />
               <h4>Blood Donation</h4>
               <p>
-                A comfortable process with sterile equipment  taking around <br /> 10-12 
-                minutes.
+                A comfortable process with sterile equipment taking around{" "}
+                <br /> 10-12 minutes.
               </p>
             </div>
           </div>
