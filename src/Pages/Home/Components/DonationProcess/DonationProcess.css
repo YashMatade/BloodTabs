@@ -1,4 +1,4 @@
-.step-circle {
+.step-circle-process {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -25,7 +25,7 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.step-circle .step-number {
+.step-circle-process .step-number-process {
   font-size: 24px;
   font-weight: bold;
   color: #000;
