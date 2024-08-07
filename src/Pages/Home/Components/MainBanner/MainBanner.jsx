@@ -1,23 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mainbanner from "../../../../assets/mainbanner.png";
 import grouppic from "../../../../assets/Groupbanner.png";
 import { FaPlay } from "react-icons/fa";
 const MainBanner = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Initial setup
+    setWindowWidth(window.innerWidth);
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div>
       <div className="container-fluid mb-5">
         <div className="row ms-2 me-2">
           <div className="col-lg-8 my-auto">
-            <div className="text-danger" style={{ fontWeight: "700", fontSize:"18px" }}>
+            <div
+              className="text-danger"
+              style={
+                window.innerWidth < 576
+                  ? { fontWeight: "700", fontSize: "18px" }
+                  : { fontWeight: "700", fontSize: "18px" }
+              }
+            >
               Donate Blood Save Life!
             </div>
             <div
               className="mt-2 mb-2"
-              style={{
-                fontWeight: "600",
-                fontSize: "60px",
-                lineHeight: "60px",
-              }}
+              style={
+                window.innerWidth < 576
+                  ? { fontWeight: "600", fontSize: "30px", lineHeight: "30px" }
+                  : {
+                      fontWeight: "600",
+                      fontSize: "60px",
+                      lineHeight: "60px",
+                    }
+              }
             >
               Sometimes Money Cannot Save Life But{" "}
               <span className="text-danger">Donated Blood</span> Can

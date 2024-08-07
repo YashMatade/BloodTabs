@@ -133,7 +133,7 @@ const IndiaMap = () => {
         <div className="row my-auto mt-5">
           {states.map((state, index) => (
             <div
-              className="col-lg-2 mt-1"
+              className="col-lg-2 col-6 mt-1"
               key={index}
               style={{ cursor: "pointer", marginBottom: "10px" }}
               onClick={() => handleStateClick(state.name)}
@@ -172,7 +172,14 @@ const IndiaMap = () => {
           ))}
         </div>
       </div>
-      <div className="col-lg-7" style={{ height: "100vh", padding: "0px" }}>
+      <div
+        className="col-lg-7"
+        style={
+          window.innerWidth < 576
+            ? { height: "400px" }
+            : { height: "100vh", padding: "0px" }
+        }
+      >
         <MapChart
           regionData={regionData}
           selectedState={selectedState}

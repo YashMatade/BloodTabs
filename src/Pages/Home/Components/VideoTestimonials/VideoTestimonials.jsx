@@ -33,7 +33,8 @@ const videos = [
     title: "Video 4",
     position: "Position 4",
     description: "Description for video 4",
-  },{
+  },
+  {
     id: 5,
     url: "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
     title: "Video ",
@@ -50,8 +51,33 @@ const VideoTestimonials = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const handleThumbnailClick = (video) => {

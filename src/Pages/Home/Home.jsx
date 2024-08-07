@@ -13,7 +13,7 @@ const SaveBlood = lazy(() =>
 const Testimonials = lazy(() =>
   import("./Components/Testimonials/Testimonials")
 );
-const OurTeam = lazy(() => import("./Components/Team//OurTeam"));
+const OurTeam = lazy(() => import("./Components/Team/OurTeam"));
 const VideoTestimonials = lazy(() =>
   import("./Components/VideoTestimonials/VideoTestimonials")
 );
@@ -33,7 +33,7 @@ const Home = () => {
       <WhatweDo />
       <WhyDonate />
       <DonationProcess />
-      <div>
+      <div className="p-3">
         <h1>Explore Blood Donation Rates Across India</h1>
         <p>
           This interactive map visualizes blood donor registration data across
@@ -42,11 +42,9 @@ const Home = () => {
         </p>
         <IndiaMap />
       </div>
-
       <div className="">
         <ReceiverForm />
       </div>
-
       <SaveBlood />
       <VideoTestimonials />
       <Testimonials />

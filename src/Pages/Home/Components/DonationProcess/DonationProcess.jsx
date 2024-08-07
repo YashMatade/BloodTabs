@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DonationProcess.css"; // Import custom CSS
 import heart from "../../../../assets/heart.png";
 import fact_check from "../../../../assets/fact_check.png";
@@ -6,6 +6,22 @@ import app_registration from "../../../../assets/app_registration.png";
 import volunteer_activism from "../../../../assets/volunteer_activism.png";
 
 const DonationProcess = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Initial setup
+    setWindowWidth(window.innerWidth);
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="container text-center my-5">
       <h2 className="mb-2">The Donation Process</h2>
@@ -15,7 +31,7 @@ const DonationProcess = () => {
       <div className="row justify-content-center">
         <div
           className="col-md-4 d-flex flex-column align-items-center"
-          style={{ marginTop: "200px" }}
+          style={window.innerWidth < 576 ? {} : { marginTop: "200px" }}
         >
           <div className="step-circle-process mb-3">
             <span className="step-number-process">1</span>
@@ -42,7 +58,7 @@ const DonationProcess = () => {
         </div>
         <div
           className="col-md-4 d-flex flex-column align-items-center "
-          style={{ marginTop: "200px" }}
+          style={window.innerWidth < 576 ? {} : { marginTop: "200px" }}
         >
           <div className="step-circle-process mb-3">
             <span className="step-number-process">3</span>
@@ -59,13 +75,17 @@ const DonationProcess = () => {
           </div>
         </div>
       </div>
-      <div className="" style={{ marginTop: "-150px" }}>
-        <img
-          src={heart}
-          style={{ height: "200px", width: "auto" }}
-          alt="heartbeat"
-        />
-      </div>
+      {window.innerWidth < 576 ? (
+        <></>
+      ) : (
+        <div className="" style={{ marginTop: "-150px" }}>
+          <img
+            src={heart}
+            style={{ height: "200px", width: "auto" }}
+            alt="heartbeat"
+          />
+        </div>
+      )}
     </div>
   );
 };
